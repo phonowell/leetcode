@@ -20,11 +20,11 @@
   You may assume that all words are consist of lowercase letters a-z.
 ###
 
-$ = {}
-
-$.i = (msg) ->
-  console.log msg
-  msg
+#$ = {}
+#
+#$.i = (msg) ->
+#  console.log msg
+#  msg
 
 WordDictionary = ->
 
@@ -35,40 +35,43 @@ WordDictionary::addWord = (word) ->
 
 WordDictionary::search = (word) ->
   @list or= []
-
   @cache or= {}
-  if @cache[word]? then return @cache[word]
 
-  @cache[word] = do ->
+  @cache[word] ?= do =>
 
-  if !~word.search /\./
-    return !!~@list.indexOf word
+    if !('.' in word) then return !!~@list.indexOf word
 
-  for a in @list
-    if a.length != word.length then continue
-    reg = new RegExp word.replace /\./g, '\\w'
-    if !~a.search reg then continue
-    return true
+    for a in @list
+      len = a.length
 
-  false
+      if word.length != len then continue
 
-dic = new WordDictionary()
+      _len = 0
+      _len++ for b, i in word when b == '.' or b == a[i]
 
-dic.addWord 'test'
-$.i dic.search 'test'
-$.i dic.search 'text'
-$.i dic.search 't..t'
+      if _len != len then continue
 
-dic.addWord 'at'
-dic.addWord 'and'
-dic.addWord 'an'
-dic.addWord 'add'
-$.i dic.search 'a'
-$.i dic.search '.at'
-dic.addWord 'bat'
-$.i dic.search '.at'
-$.i dic.search 'an.'
-$.i dic.search 'a.d.'
-$.i dic.search 'b.'
-$.i dic.search 'a.d'
-$.i dic.search '.'
+      return true
+
+    false
+
+#dic = new WordDictionary()
+#
+#dic.addWord 'test'
+#$.i dic.search 'test'
+#$.i dic.search 'text'
+#$.i dic.search 't..t'
+#
+#dic.addWord 'at'
+#dic.addWord 'and'
+#dic.addWord 'an'
+#dic.addWord 'add'
+#$.i dic.search 'a'
+#$.i dic.search '.at'
+#dic.addWord 'bat'
+#$.i dic.search '.at'
+#$.i dic.search 'an.'
+#$.i dic.search 'a.d.'
+#$.i dic.search 'b.'
+#$.i dic.search 'a.d'
+#$.i dic.search '.'
