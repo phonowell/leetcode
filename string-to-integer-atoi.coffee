@@ -17,26 +17,14 @@ $.i = (msg) ->
   console.log msg
   msg
 
-toInt = (string) ->
+atoi = (str) ->
 
-  map = [
-    '0', '1', '2', '3', '4'
-    '5', '6', '7', '8', '9'
-  ]
+  res = parseInt(str) or 0
 
-  if !string then return NaN
-  if !string.length then return NaN
+  if res > 2147483647 then res = 2147483647
+  else if res < -2147483648 then res = -2147483648
 
-  list = []
+  res
 
-  for a in string
-
-    if !(a in map)
-      if list.length then break
-      continue
-
-    list.push a
-
-  new Number list.join ''
-
-$.i toInt 'ab123'
+$.i atoi ''
+$.i atoi '2147483648'
