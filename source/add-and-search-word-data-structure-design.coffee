@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/add-and-search-word-data-structure-design/
 
 ###
+
   Design a data structure that supports the following two operations:
 
   void addWord(word)
@@ -18,6 +19,7 @@
   search("b..' -> true
   Note:
   You may assume that all words are consist of lowercase letters a-z.
+
 ###
 
 #$ = {}
@@ -26,7 +28,7 @@
 #  console.log msg
 #  msg
 
-WordDictionary = ->
+WordDictionary = -> null
 
 WordDictionary::addWord = (word) ->
   @list or= []

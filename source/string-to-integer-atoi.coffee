@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/string-to-integer-atoi/
 
 ###
+
   Implement atoi to convert a string to an integer.
   实现atoi，将一个字符串转换为整数。
 
@@ -9,6 +10,7 @@
 
   Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.
   注意：这个问题有意表述模糊（即没有指明输入格式）。你需要自行应对所有的输入情况。
+
 ###
 
 $ = {}

@@ -1,8 +1,10 @@
 # https://leetcode.com/problems/power-of-two/
 
 ###
+
   Given an integer, write a function to determine if it is a power of two.
   给出一个整数，判断它是否是2的幂。
+
 ###
 
 $ = {}

@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/two-sum/
 
 ###
+
   Given an array of integers, return indices of the two numbers such that they add up to a specific target.
   给出一个整数数组，返回两个索引，使数组中对应元素的和为一特殊值。
 
@@ -18,6 +19,7 @@
 
   return [0, 1].
   故返回 [0, 1]。
+
 ###
 
 $ = {}

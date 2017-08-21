@@ -1,0 +1,27 @@
+{
+  "name": "leetcode",
+  "version": "0.0.1",
+  "description": "leetcode",
+  "main": "./index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phonowell/leetcode.git"
+  },
+  "keywords": [
+    "leetcode"
+  ],
+  "author": "Mimiko Phonowell <phonowell@gmail.com>",
+  "license": "GPL-3.0+",
+  "url": "https://github.com/phonowell/leetcode",
+  "bugs": {
+    "url": "https://github.com/phonowell/leetcode/issues"
+  },
+  "homepage": "https://github.com/phonowell/leetcode",
+  "devDependencies": {},
+  "dependencies": {
+    "fire-keeper": "0.0.59"
+  }
+}

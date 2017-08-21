@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 ###
+
   Say you have an array for which the ith element is the price of a given stock on day i.
   假设你有一个数组，第i个元素表示给定股票在第i天的价格。
 
@@ -24,6 +25,7 @@
 
   In this case, no transaction is done, i.e. max profit = 0.
   在这个案例中，不能完成任何交易，即最大利润为零。
+
 ###
 
 $ = {}
