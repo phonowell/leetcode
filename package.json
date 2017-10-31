@@ -22,6 +22,6 @@
   "homepage": "https://github.com/phonowell/leetcode",
   "devDependencies": {},
   "dependencies": {
-    "fire-keeper": "0.0.59"
+    "fire-keeper": "0.0.77"
   }
 }

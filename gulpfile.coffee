@@ -6,17 +6,7 @@ co = Promise.coroutine
 
 # function
 
-exclude = (arg) ->
-
-  list = switch $.type arg
-    when 'array' then arg
-    when 'string' then [arg]
-    else throw new Error 'invalid argument type'
-
-  _.uniq list.push '!**/include/**'
-
-  # return
-  list
+exclude = $$.fn.excludeInclude
 
 # task
 
@@ -27,7 +17,6 @@ exclude = (arg) ->
   set
   test
   watch
-  work
 
 ###
 
@@ -70,7 +59,5 @@ $$.task 'watch', ->
     yield $$.compile e.path,
       bare: true
       minify: false
-
-$$.task 'work', -> $$.shell 'start gulp watch'
 
 #$$.task 'z', co ->
