@@ -1,8 +1,7 @@
 # require
 
 $$ = require 'fire-keeper'
-{$, _, Promise} = $$.library
-co = Promise.coroutine
+{$, _} = $$.library
 
 # function
 
@@ -20,44 +19,44 @@ exclude = $$.fn.excludeInclude
 
 ###
 
-$$.task 'build', co ->
+$$.task 'build', ->
 
   source = exclude './source/**/*.coffee'
 
-  yield $$.compile source,
+  await $$.compile source,
     bare: true
     minify: false
 
-$$.task 'lint', co ->
+$$.task 'lint', ->
 
-  yield $$.task('kokoro')()
+  await $$.task('kokoro')()
 
-  yield $$.lint [
+  await $$.lint [
     './gulpfile.coffee'
     './source/**/*.coffee'
     './test/**/*.coffee'
   ]
 
-$$.task 'set', co ->
+$$.task 'set', ->
 
   if !(ver = $$.argv.version) then return
 
-  yield $$.replace './package.json'
+  await $$.replace './package.json'
   , /"version": "[\d.]+"/, "\"version\": \"#{ver}\""
 
-$$.task 'test', co ->
+$$.task 'test', ->
 
-  yield $$.compile './test/**/*.coffee'
-  yield $$.shell 'npm test'
-  yield $$.remove './test/**/*.js'
+  await $$.compile './test/**/*.coffee'
+  await $$.shell 'npm test'
+  await $$.remove './test/**/*.js'
 
 $$.task 'watch', ->
 
   source = exclude './source/**/*.coffee'
 
-  $$.watch source, co (e) ->
-    yield $$.compile e.path,
+  $$.watch source, (e) ->
+    await $$.compile e.path,
       bare: true
       minify: false
 
-#$$.task 'z', co ->
+# $$.task 'z', ->
